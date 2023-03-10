@@ -27,7 +27,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("humansvsaliens.App")
+    mainClass.set("app.src.main.java.humansvsaliens.App")
 }
 
 tasks.named<Test>("test") {

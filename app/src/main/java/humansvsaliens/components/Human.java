@@ -28,4 +28,22 @@ public class Human extends Entity {
     public List<Boost> getBoosts() {
         return this.boosts;
     }
+
+    @Override
+    public String toString() {
+        String str = this.name + " (Human)\n";
+        str += "HP: \n  " + this.hp + "\n";
+        str += "Weight: \n  " + this.weight + "lbs\n";
+        str += "Armor: \n";
+        for (Armor a : armor) {
+            str += "  " + a + "\n";
+        }
+
+        str += "Boosts: \n";
+        for (Boost b : boosts) {
+            str += "  " + b + "\n";
+        }
+
+        return str;
+    }
 }

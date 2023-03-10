@@ -3,12 +3,26 @@
  */
 package app.src.main.java.humansvsaliens;
 
+import app.src.main.java.humansvsaliens.components.*;
+
 public class App {
+    public App() {
+        Alien a = new Alien("a", 400, 273);
+        a.addPower(new Power("Telekinesis", "Spooky action at a distance"));
+        a.addPower(new Power("Mutation", "Ability to take on an alternate form"));
+        System.out.println(a);
+
+        Human jill = new Human("Jill", 200, 132);
+        System.out.println(jill);
+
+    }
+
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        
     }
 }
