@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import app.src.main.java.humansvsaliens.components.Human;
+import app.src.main.java.humansvsaliens.beings.Human;
 
 public class HumanTest {
     String name;

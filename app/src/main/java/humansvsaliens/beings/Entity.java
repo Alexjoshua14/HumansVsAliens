@@ -1,4 +1,5 @@
-package app.src.main.java.humansvsaliens.components;
+package app.src.main.java.humansvsaliens.beings;
+
 public class Entity {
     protected String name;
     protected int hp;

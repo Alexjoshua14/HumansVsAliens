@@ -4,6 +4,7 @@
 package app.src.main.java.humansvsaliens;
 
 import app.src.main.java.humansvsaliens.components.*;
+import app.src.main.java.humansvsaliens.beings.*;
 
 public class App {
     public App() {

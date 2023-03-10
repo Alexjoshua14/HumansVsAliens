@@ -1,4 +1,6 @@
-package app.src.main.java.humansvsaliens.components;
+package app.src.main.java.humansvsaliens.beings;
+
+import app.src.main.java.humansvsaliens.components.*;
 
 import java.util.List;
 import java.util.ArrayList;
