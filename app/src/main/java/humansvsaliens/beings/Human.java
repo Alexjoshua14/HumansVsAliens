@@ -21,6 +21,13 @@ public class Human extends Entity {
 
     public void addBoost(Boost boost) {
         boosts.add(boost);
+        boost.getEffects().stream().filter(e -> !e.isRecurring()).forEach(e -> {
+            if (e.getEffectedAttribute() == "hp") {
+                int effectedAmount = e.getEffectedAmount();
+                if (effectedAmount < 0) takeDamage(effectedAmount);
+                else heal(effectedAmount);
+            }
+        });
     }
 
     public List<Armor> getArmor() {

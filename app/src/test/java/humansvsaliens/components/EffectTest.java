@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import app.src.main.java.humansvsaliens.components.Effect;
+import app.src.main.java.humansvsaliens.components.Boost;
+import app.src.main.java.humansvsaliens.beings.*;
+
 
 public class EffectTest {
     String effectedAttribute;
@@ -40,6 +43,25 @@ public class EffectTest {
     void recurringSpeicificFields() {
         assertNotNull(recurringEffect.getFrequency());
         assertNotNull(recurringEffect.getDuration());
+    }
+
+    @Test
+    void recurringHealingBoost() {
+        int startHP = 400;
+        Human e = new Human("Steve", startHP, 132);
+        e.takeDamage(209);
+        
+
+
+        assertEquals(startHP - 209, e.getHP());
+
+        //Begin healing
+        Effect effect = new Effect("hp", 40);
+        Boost boost = new Boost("Health Regeneration", "Healing");
+        boost.addEffect(effect);
+        e.addBoost(boost);
+
+        assertEquals((startHP - 209) + 40, e.getHP());
     }
 
 

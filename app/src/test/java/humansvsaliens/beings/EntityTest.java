@@ -34,4 +34,10 @@ public class EntityTest {
     void hasWeight() {
         assertEquals(weight, entity.getWeight());
     }
+
+    @Test
+    void canTakeDamage() {
+        entity.takeDamage(142);
+        assertEquals(hp - 142, entity.getHP());
+    }
 }
