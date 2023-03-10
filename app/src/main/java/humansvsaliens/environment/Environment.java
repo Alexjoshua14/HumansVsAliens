@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class Environment {
+    private String name;
     private List<Entity> entitiesPresent;
 
-    public Environment() {
+    public Environment(String name) {
+        this.name = name;
         entitiesPresent = new ArrayList<Entity>();
     }
 
@@ -27,5 +29,22 @@ public class Environment {
 
     public List<Human> getHumans() {
         return entitiesPresent.stream().filter(e -> e instanceof Human).map(a -> (Human) a).collect(Collectors.toList());
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public String toString() {
+        String str = name + "\n";
+        str += "There are currently " + entitiesPresent.size() + " entities present.\n";
+        str += "Aliens present: " + getAliens().size() + "\n";
+        str += "Humans present: " + getHumans().size() + "\n";
+        for (Entity e : entitiesPresent) {
+            str += "" + e + "\n";
+        }
+
+        return str;
     }
 }

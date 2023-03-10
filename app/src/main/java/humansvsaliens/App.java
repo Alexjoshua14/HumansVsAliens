@@ -3,19 +3,50 @@
  */
 package app.src.main.java.humansvsaliens;
 
+import app.src.main.java.humansvsaliens.environment.*;
 import app.src.main.java.humansvsaliens.components.*;
 import app.src.main.java.humansvsaliens.beings.*;
 
+import java.util.ArrayList;
+
 public class App {
     public App() {
+        Environment titan = createEnvironment();
+        System.out.println(titan);
+
+    }
+
+    public Environment createEnvironment() {
+        Environment titan = new Environment("Titan");
+
+        ArrayList<Entity> entities = new ArrayList<Entity>();
+
         Alien a = new Alien("a", 400, 273);
         a.addPower(new Power("Telekinesis", "Spooky action at a distance"));
         a.addPower(new Power("Mutation", "Ability to take on an alternate form"));
-        System.out.println(a);
+
+        Alien b = new Alien("b", 250, 273);
+        b.addPower(new Power("Telekinesis", "Spooky action at a distance"));
+
+        Alien c = new Alien("c", 500, 273);
+        c.addPower(new Power("Mutation", "Ability to take on an alternate form"));
+
+        Alien d = new Alien("d", 190, 273);
 
         Human jill = new Human("Jill", 200, 132);
-        System.out.println(jill);
+        Human stefan = new Human("Stefan", 290, 214);
+        Human luis = new Human("Luis", 193, 109);
 
+        entities.add(a);
+        entities.add(b);
+        entities.add(c);
+        entities.add(d);
+        entities.add(jill);
+        entities.add(stefan);
+        entities.add(luis);
+
+        for (Entity e : entities) titan.addEntity(e);
+        return titan;
     }
 
     public String getGreeting() {

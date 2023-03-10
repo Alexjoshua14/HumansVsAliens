@@ -20,7 +20,7 @@ public class EnvironmentTest {
 
     @BeforeEach
     void setUpEnvironment() {
-        titan = new Environment();
+        titan = new Environment("Titan");
 
         aliens = new ArrayList<Alien>();
         humans = new ArrayList<Human>();
@@ -31,13 +31,13 @@ public class EnvironmentTest {
         a.addPower(new Power("Telekinesis", "Spooky action at a distance"));
         a.addPower(new Power("Mutation", "Ability to take on an alternate form"));
 
-        Alien b = new Alien("a", 250, 273);
+        Alien b = new Alien("b", 250, 273);
         b.addPower(new Power("Telekinesis", "Spooky action at a distance"));
 
-        Alien c = new Alien("a", 500, 273);
+        Alien c = new Alien("c", 500, 273);
         c.addPower(new Power("Mutation", "Ability to take on an alternate form"));
 
-        Alien d = new Alien("a", 190, 273);
+        Alien d = new Alien("d", 190, 273);
 
         Human jill = new Human("Jill", 200, 132);
         Human stefan = new Human("Stefan", 290, 214);
