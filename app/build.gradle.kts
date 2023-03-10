@@ -18,7 +18,8 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
+    testImplementation(platform("org.junit:junit-bom:5.9.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
@@ -32,4 +33,8 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    testLogging {
+		events("passed", "skipped", "failed")
+	}
+
 }

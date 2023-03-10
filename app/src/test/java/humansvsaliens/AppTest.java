@@ -3,12 +3,14 @@
  */
 package app.src.test.java.humansvsaliens;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import app.src.main.java.humansvsaliens.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
 }
